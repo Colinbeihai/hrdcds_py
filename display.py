@@ -74,12 +74,24 @@ if __name__=='__main__':
     zero_matrix = np.array(zero).reshape(1,1)
 
     matrix2 = np.concatenate((message_matrix, noise_matrix, zero_matrix), axis=0)
-    matrix = np.concatenate((matrix, matrix2), axis=1)
 
-    # 定义涂色区域：黄色标记第1行第1、2格，红色标记第6行第12格
+    W = np.concatenate((matrix[5,:],matrix2[4]))
+    message_matrix = np.array(W).reshape(2, 2)
+
+    Z = [f"Z_{{{k+1}}}" for k in range(8,12)]
+    noise_matrix = np.array(Z).reshape(2, 2)
+
+    zero = np.zeros(4, dtype=int)
+    zero_matrix = np.array(zero).reshape(2, 2)
+
+    matrix3 = np.concatenate((message_matrix, noise_matrix, zero_matrix), axis=0)
+
+    matrix = np.concatenate((matrix, matrix2, matrix3), axis=1)
+
+    # 定义涂色区域：黄色标记
     color_regions = [
-        ("yellow", [(5, 0), (5, 1),(5, 2), (5, 3),(5, 4), (5, 5)]),
-        ("yellow",    [(0, 6),(0, 7), (2, 6),(2, 7), (1, 6),(1, 7)])
+        ("yellow", [(4, 0), (4, 1),(4, 2), (0, 3),(1, 3), (2, 3)]),
+        ("cyan",   [(5, 0),(5, 1), (5, 2),(4, 3), (0, 4),(0, 5), (1, 4),(1, 5)])
     ]
 
     visualize_matrix(matrix, color_regions)
