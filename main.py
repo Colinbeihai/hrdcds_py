@@ -38,7 +38,7 @@ def SCGen(W, Z):
 
 if __name__=='__main__':
     # choose system parameters
-    N, R_r, K_c = 6, 4, 3
+    N, R_r, K_c = 9, 5, 2
 
     G, alpha, beta, gamma, lambda_i, L = parameters_generator(N, R_r, K_c)
     # 生成W，Z

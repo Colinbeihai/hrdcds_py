@@ -12,17 +12,13 @@ import warnings
 
 warnings.filterwarnings("ignore", category=UserWarning, message=".*tRNS: invalid with alpha channel")
 
-colors = ["yellow", "cyan", "green", "red", "purple", "orange"]  # 预定义颜色列表
+colors = ["#C0D8FF", "#C6C6FA", "#98FB98", "#FFDAB9", "#FFB6C1", "#D8BFD8"]  # 预定义颜色列表 (Darker Alice blue, darker lavender, pale green, peach puff, light pink, thistle)
 
 def analyze_repetitions(matrix, gamma):
-    """   
-    返回:
-    {
-        "M1_repeats": {
-            "elements": [元素1, 元素2,...],  
-            "positions": [(行,列),...] 
-        },
-    }
+    """
+    分析重复元素
+    matrix: 台阶矩阵
+    gamma: 子矩阵的列数   
     """
     # 1. 分割矩阵并记录偏移
     submatrices = []
