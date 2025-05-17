@@ -24,12 +24,12 @@ def parameters_generator(N, R_r, K_c):
     for i in range(G):
         lambda_i.append(L//alpha[i])
 
-    print("G:",G)
-    print("alpha:",alpha)
-    print("beta:",beta)
-    print("gamma:",gamma)
-    print("lambda_i:",lambda_i)
-    print("L:",L)
+    # print("G:",G)
+    # print("alpha:",alpha)
+    # print("beta:",beta)
+    # print("gamma:",gamma)
+    # print("lambda_i:",lambda_i)
+    # print("L:",L)
 
     return  G, alpha, beta, gamma, lambda_i, L
 
